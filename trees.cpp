@@ -34,3 +34,30 @@ TreeNode* ancestor(int x, int y, TreeNode* root) {
 	if (x > root->value && y > root->value) return ancestor(x, y, root->right);
 	return root;
 }
+
+/*************************
+ * Given a binary tree, design an algorithm that cfreates a linked list of all the nodes at each depth
+*************************/
+
+ArrayListList<TreeNode> convToList(TreeNode root) {
+  ArrayList<List> list = new ArrayList<ListNode>;
+  convToListHelper(root, 0, list);
+  return list;
+}
+
+void convToListHelper(TreeNode root, int depth, ArrayList<List> list) {
+	if(root == NULL) return NULL;
+  
+  else {
+    ListNode<TreeNode> cur = new ListNode;
+    cur.value = root;
+   	
+    if( !list[depth] ) {
+      list[depth] = new List<TreeNode>;
+    }
+   	
+    list[depth].add(cur);
+    if(root.left) convToListHelper(root.left, depth++, list);
+    if(root.right) convToListHelper(root.right, depth++, list);
+  }
+}
