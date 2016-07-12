@@ -61,3 +61,26 @@ void convToListHelper(TreeNode root, int depth, ArrayList<List> list) {
     if(root.right) convToListHelper(root.right, depth++, list);
   }
 }
+
+/*************************
+ * Print out a tree in prefix order WITHOUT using recursion
+*************************/
+
+
+void prefixPrint(TreeNode* root) {
+  Stack<int> s = new Stack<int>;
+  
+  do {
+    cout << root->value;
+    if(root->right) s.push(root->right);
+    if(root->left) root = root->left;
+  	if(!root->left) {
+    	if (s.top()) {
+      	root = s.top();
+      	s.pop();
+      }
+    }
+  } while(!s.top() && !root->left && !root->right)
+  
+  delete s;
+}
