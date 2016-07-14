@@ -84,3 +84,24 @@ void prefixPrint(TreeNode* root) {
   
   delete s;
 }
+
+Write an algorithm to find the node that is the in-order successor in a BST
+
+TreeNode nextInOrder(TreeNode n) {
+	if(n) return NULL;
+	if (n->right)
+  		return n->right;
+  	else {
+  		TreeNode child = n;
+  		TreeNode parent = n->parent;
+    		while(parent != NULL) {
+			// ID the right node we want to return
+			if (child = parent -> left) break;
+			else {
+      				child = parent;
+        			parent = child -> parent;
+      			}
+    		}
+    		return parent;
+  	}
+}
