@@ -36,7 +36,7 @@ TreeNode* ancestor(int x, int y, TreeNode* root) {
 }
 
 /*************************
- * Given a binary tree, design an algorithm that cfreates a linked list of all the nodes at each depth
+ * Given a binary tree, design an algorithm that creates a linked list of all the nodes at each depth (CtCI, 07-07-2016)
 *************************/
 
 ArrayListList<TreeNode> convToList(TreeNode root) {
@@ -63,7 +63,7 @@ void convToListHelper(TreeNode root, int depth, ArrayList<List> list) {
 }
 
 /*************************
- * Print out a tree in prefix order WITHOUT using recursion
+ * Print out a tree in prefix order WITHOUT using recursion (PIE, 07-12-2016)
 *************************/
 
 
@@ -85,7 +85,10 @@ void prefixPrint(TreeNode* root) {
   delete s;
 }
 
-Write an algorithm to find the node that is the in-order successor in a BST
+/*************************
+ * Write an algorithm to find the node that is the in-order successor in a BST (CtCI, 07-13-2016)
+*************************/
+
 
 TreeNode nextInOrder(TreeNode n) {
 	if(n) return NULL;
@@ -104,4 +107,21 @@ TreeNode nextInOrder(TreeNode n) {
     		}
     		return parent;
   	}
+}
+
+
+/*************************
+ * Given a set of integers in an unordered Binary Tree, transform the tree into a heap. (PIE, 07-14-2016)
+*************************/
+
+int[] turnToHeap(TreeNode* root) {
+  int[] treeHeap = new int[];
+ 	return turnToHeap(root, 0, treeHeap);
+}
+
+int[] turnToHeap(TreeNode* root, int index, &const int[] treeHeap) {
+  treeHeap[index] = root->value;
+  if(root->left) turnToHeap(root->left, index*2+1, treeHeap);
+  if(root->right) turnToHeap(root->right, index*2+2, treeHeap);
+  return treeHeap;
 }
