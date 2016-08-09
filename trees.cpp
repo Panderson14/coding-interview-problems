@@ -66,7 +66,6 @@ void convToListHelper(TreeNode root, int depth, ArrayList<List> list) {
  * Print out a tree in prefix order WITHOUT using recursion (PIE, 07-12-2016)
 *************************/
 
-
 void prefixPrint(TreeNode* root) {
   Stack<int> s = new Stack<int>;
   
@@ -89,7 +88,6 @@ void prefixPrint(TreeNode* root) {
  * Write an algorithm to find the node that is the in-order successor in a BST (CtCI, 07-13-2016)
 *************************/
 
-
 TreeNode nextInOrder(TreeNode n) {
 	if(n) return NULL;
 	if (n->right)
@@ -108,7 +106,6 @@ TreeNode nextInOrder(TreeNode n) {
     		return parent;
   	}
 }
-
 
 /*************************
  * Given a set of integers in an unordered Binary Tree, transform the tree into a heap. (PIE, 07-14-2016)
